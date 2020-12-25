@@ -124,23 +124,18 @@ p {
   h2 {
     font-size: 2em;
   }
-
   h4 {
     font-size: 1.1em;
   }
-
   h5, h6, p {
     font-size: 1em;
   }
-
   .table-width {
     font-size: 1em;
   }
-
   .review-meta, .review-stars {
     font-size: 1.5rem;
   }
-
   .review-date {
     font-family: 'Lato', sans-serif;
     display: block;
@@ -149,15 +144,18 @@ p {
     color: #5f6368;
     font-size: 1rem;
   }
-
   .font-datenschutz {
     font-size: 1rem;
   }
+}
 
-
-
-
-
+@media screen and (min-width: 1201px) {
+  .table-width {
+    font-size: 1.25rem;
+  }
+  .font-datenschutz {
+    font-size: 1.25rem;
+  }
 }
 
 .font-brown {
@@ -296,7 +294,6 @@ hr {
 .table-width {
   width: 100%;
   font-family: 'Lato', sans-serif;
-  font-size: 1.25rem;
   color: white;
   /* White */
 }
@@ -634,6 +631,5 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 .font-datenschutz {
   color: white;
   font-family: 'Lato', sans-serif;
-  font-size: 1.25rem;
   font-weight: 400;
 }
