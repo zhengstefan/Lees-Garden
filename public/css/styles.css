@@ -120,6 +120,46 @@ p {
   margin-bottom: 8px;
 }
 
+@media screen and (max-width: 1200px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  h5, h6, p {
+    font-size: 1em;
+  }
+
+  .table-width {
+    font-size: 1em;
+  }
+
+  .review-meta, .review-stars {
+    font-size: 1.5rem;
+  }
+
+  .review-date {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #5f6368;
+    font-size: 1rem;
+  }
+
+  .font-datenschutz {
+    font-size: 1rem;
+  }
+
+
+
+
+
+}
+
 .font-brown {
   color: #432327;
   /* brown */
@@ -329,7 +369,7 @@ li.active>a {
 }
 
 .take-out-img {
-  height: 300px;
+  height: 200px;
   padding: 20px;
 }
 
@@ -354,7 +394,7 @@ li.active>a {
 @media screen and (max-width: 992px) {
   .img-buffet {
     width: 100%;
-    height: 300px;
+    height: 250px;
   }
 }
 
@@ -416,7 +456,6 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 .review-author {
   text-transform: capitalize;
   font-family: 'Lato', sans-serif;
-  font-size: 1.75rem;
   font-weight: 700;
   color: black;
   padding: 0;
@@ -433,7 +472,6 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 
 .review-text {
   font-family: 'Lato', sans-serif;
-  font-size: 1.25rem;
   font-weight: 400;
   color: #222;
   text-align: center;
@@ -526,7 +564,7 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 
 @media screen and (max-width: 992px) {
   .resp-iframe {
-    height: 300px;
+    height: 250px;
   }
   .card-small {
     margin: 7% 5%;
