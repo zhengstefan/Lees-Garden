@@ -213,7 +213,7 @@
 
   <div id="google-reviews"></div>
   <script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCzEX4-HXN48x52r3edZhBz1XXd_Wuk1xQ&signed_in=true&libraries=places&language=de"></script>
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=googleApiKey%>&signed_in=true&libraries=places&language=de"></script>
   <script>
     jQuery(document).ready(function ($) {
       $("#google-reviews").googlePlaces({
@@ -238,7 +238,7 @@
   <div class="text-center">
     <h3>Möchten Sie einen Blick<br>
       auf unser authentisches Ambiente werfen?</h3>
-    <button class="btn btn-custom"><a href="">Über unser Restaurant</a></button>
+    <button class="btn btn-custom"><a href="/restaurant">Über unser Restaurant</a></button>
   </div>
 </section>
 

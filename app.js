@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
@@ -22,7 +23,7 @@ const thisYear = new Date().getFullYear();
 
 /* Google Total Reviews Widget */
 
-const url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJr99LYO8gvUcRrfxkVQhwB7c&fields=name,rating,user_ratings_total&key=AIzaSyCzEX4-HXN48x52r3edZhBz1XXd_Wuk1xQ"
+const url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJr99LYO8gvUcRrfxkVQhwB7c&fields=name,rating,user_ratings_total&key=" + process.env.GOOGLEAPIKEY;
 
 app.get("/", function (req, res) {
     https.get(url, function (response) {
@@ -38,7 +39,8 @@ app.get("/", function (req, res) {
             res.render('index', {
                 rating: rating,
                 userRatingsTotal: userRatingsTotal,
-                year: thisYear
+                year: thisYear,
+                googleApiKey: process.env.GOOGLEAPIKEY
             })
 
         });
