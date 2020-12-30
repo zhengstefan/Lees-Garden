@@ -669,8 +669,6 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 color: black;
 }
 
-.paddles {}
-
 .paddle {
   position: absolute;
   top: 0;
