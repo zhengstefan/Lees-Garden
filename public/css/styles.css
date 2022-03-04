@@ -121,6 +121,15 @@ p {
   margin-bottom: 8px;
 }
 
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul {
+  padding-left: 1em;
+}
+
 @media screen and (max-width: 1200px) {
   h2 {
     font-size: 2em;
@@ -597,6 +606,11 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 
 #speisekarte-nachtisch {
   background-image: url("../images/background-wood-webp.webp");
+}
+
+.price-alignment {
+  text-align: right;
+  vertical-align: top;
 }
 
 /* Speisekarte */
