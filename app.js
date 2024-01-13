@@ -23,30 +23,34 @@ const thisYear = new Date().getFullYear();
 
 /* Google Total Reviews Widget */
 
+
 const url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJr99LYO8gvUcRrfxkVQhwB7c&fields=name,rating,user_ratings_total&key=" + process.env.GOOGLEAPIKEY;
 
 app.get("/", function (req, res) {
+    
     https.get(url, function (response) {
         response.on("data", function (data) {
             const totalReviewData = JSON.parse(data);
-
+            
             const name = totalReviewData.result.name;
             const rating = totalReviewData.result.rating;
             const userRatingsTotal = totalReviewData.result.user_ratings_total;
 
-
-
             res.render('index', {
+                
                 rating: rating,
                 userRatingsTotal: userRatingsTotal,
                 year: thisYear,
                 googleApiKey: process.env.GOOGLEAPIKEY
+                
             })
 
         });
 
     })
+    
 })
+
 
 app.get("/speisekarte", function (req, res) {
     res.render('speisekarte', {
