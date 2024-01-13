@@ -30,18 +30,20 @@ app.get("/", function (req, res) {
     
     https.get(url, function (response) {
         response.on("data", function (data) {
+            
             const totalReviewData = JSON.parse(data);
             
             const name = totalReviewData.result.name;
             const rating = totalReviewData.result.rating;
             const userRatingsTotal = totalReviewData.result.user_ratings_total;
-
+            
             res.render('index', {
                 
                 rating: rating,
                 userRatingsTotal: userRatingsTotal,
-                year: thisYear,
-                googleApiKey: process.env.GOOGLEAPIKEY
+                googleApiKey: process.env.GOOGLEAPIKEY,
+                
+                year: thisYear
                 
             })
 
@@ -50,7 +52,6 @@ app.get("/", function (req, res) {
     })
     
 })
-
 
 app.get("/speisekarte", function (req, res) {
     res.render('speisekarte', {
