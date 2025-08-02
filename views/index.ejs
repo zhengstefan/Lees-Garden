@@ -225,40 +225,62 @@
     </div>
     
     <div id="google-reviews">
-    <% if (reviews && reviews.length > 0) { %>
-        <% reviews.sort((a, b) => b.time - a.time); // Sort by date descending %>
-        <% reviews = reviews.filter(review => review.rating >= 5).slice(0, 4); // Filter and limit to 4 reviews %>
-        <% reviews.forEach(review => { %>
-            <div class="review-item">
-                <div class="review-meta">
-                    <span class="google-logo"></span>
-                    <span class="review-author">
-                        <%= review.author_name.split(" ").length > 1 ? review.author_name.split(" ")[0] + " " + review.author_name.split(" ")[1][0] + "." : review.author_name %>
-                    </span>
-                    <span class="review-date">
-                        <% 
-                            const date = new Date(review.time * 1000);
-                            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-                            const formattedDate = date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
-                        %>
-                        <%= formattedDate %>
-                    </span>
-                </div>
-                <div class="review-stars">
-                    <ul>
-                        <% for (let i = 0; i < review.rating; i++) { %>
-                            <li><i class="star"></i></li>
-                        <% } %>
-                        <% for (let i = review.rating; i < 5; i++) { %>
-                            <li><i class="star inactive"></i></li>
-                        <% } %>
-                    </ul>
-                </div>
-                <p class="review-text"><%= review.text %></p>
-            </div>
-        <% }); %>
-    <% } %>
-</div>
+                <% if (reviews && reviews.length > 0) { %>
+                    <% 
+                        // Filter reviews: rating between 3 and 5, and sort by date descending
+                        const filteredReviews = reviews
+                            .filter(review => review.rating >= 3 && review.rating <= 5)
+                            .sort((a, b) => b.time - a.time);
+
+                        // Get current year
+                        const currentYear = new Date().getFullYear();
+
+                        // Separate current year reviews and older reviews
+                        const currentYearReviews = filteredReviews.filter(review => new Date(review.time * 1000).getFullYear() === currentYear);
+                        const olderReviews = filteredReviews.filter(review => new Date(review.time * 1000).getFullYear() < currentYear);
+
+                        // Ensure at least 2 current year reviews, fill with older reviews if needed
+                        let selectedReviews = currentYearReviews.slice(0, 4);
+                        if (selectedReviews.length < 2 && currentYearReviews.length < 2) {
+                            selectedReviews = currentYearReviews.concat(olderReviews).slice(0, 4);
+                        } else if (selectedReviews.length < 4) {
+                            selectedReviews = currentYearReviews.slice(0, 2).concat(olderReviews.slice(0, 4 - 2));
+                        }
+
+                        // Limit to 4 reviews
+                        selectedReviews = selectedReviews.slice(0, 4);
+                    %>
+                    <% selectedReviews.forEach(review => { %>
+                        <div class="review-item">
+                            <div class="review-meta">
+                                <span class="google-logo"></span>
+                                <span class="review-author">
+                                    <%= review.author_name.split(" ").length > 1 ? review.author_name.split(" ")[0] + " " + review.author_name.split(" ")[1][0] + "." : review.author_name %>
+                                </span>
+                                <span class="review-date">
+                                    <% 
+                                        const date = new Date(review.time * 1000);
+                                        const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+                                        const formattedDate = date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
+                                    %>
+                                    <%= formattedDate %>
+                                </span>
+                            </div>
+                            <div class="review-stars">
+                                <ul>
+                                    <% for (let i = 0; i < review.rating; i++) { %>
+                                        <li><i class="star"></i></li>
+                                    <% } %>
+                                    <% for (let i = review.rating; i < 5; i++) { %>
+                                        <li><i class="star inactive"></i></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                            <p class="review-text"><%= review.text %></p>
+                        </div>
+                    <% }); %>
+                <% } %>
+              </div>
     
   </section>
 
