@@ -224,21 +224,41 @@
       </div>
     </div>
     
-    <div id="google-reviews"></div>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCfEzQevmygZXBxfFx1gEmuHRnjd7_XLX4&signed_in=true&libraries=places&language=de"></script>
-    <script>
-      jQuery(document).ready(function ($) {
-        $("#google-reviews").googlePlaces({
-          placeId: 'ChIJr99LYO8gvUcRrfxkVQhwB7c' //Find placeID @: https://developers.google.com/places/place-id
-          , render: ['reviews']
-          , min_rating: 5
-          , max_rows: 4
-          , shorten_names: true
-
-        });
-      });
-    </script>
+    <div id="google-reviews">
+    <% if (reviews && reviews.length > 0) { %>
+        <% reviews.sort((a, b) => b.time - a.time); // Sort by date descending %>
+        <% reviews = reviews.filter(review => review.rating >= 5).slice(0, 4); // Filter and limit to 4 reviews %>
+        <% reviews.forEach(review => { %>
+            <div class="review-item">
+                <div class="review-meta">
+                    <span class="google-logo"></span>
+                    <span class="review-author">
+                        <%= review.author_name.split(" ").length > 1 ? review.author_name.split(" ")[0] + " " + review.author_name.split(" ")[1][0] + "." : review.author_name %>
+                    </span>
+                    <span class="review-date">
+                        <% 
+                            const date = new Date(review.time * 1000);
+                            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+                            const formattedDate = date.getDate() + '. ' + months[date.getMonth()] + ' ' + date.getFullYear();
+                        %>
+                        <%= formattedDate %>
+                    </span>
+                </div>
+                <div class="review-stars">
+                    <ul>
+                        <% for (let i = 0; i < review.rating; i++) { %>
+                            <li><i class="star"></i></li>
+                        <% } %>
+                        <% for (let i = review.rating; i < 5; i++) { %>
+                            <li><i class="star inactive"></i></li>
+                        <% } %>
+                    </ul>
+                </div>
+                <p class="review-text"><%= review.text %></p>
+            </div>
+        <% }); %>
+    <% } %>
+</div>
     
   </section>
 

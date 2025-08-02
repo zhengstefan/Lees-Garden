@@ -1,0 +1,71 @@
+{
+  "html_attributions": [],
+  "result": {
+    "name": "China Restaurant Lee's Garden",
+    "rating": 4.3,
+    "reviews": [
+      {
+        "author_name": "Les B",
+        "author_url": "https://www.google.com/maps/contrib/116143431033829115187/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjX0awleyKrGStAELxJotKFwuj3VPqPE4BqlGUay5NvrUxN6gtA=s128-c0x00000000-cc-rp-mo-ba3",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "I found this good buffet Restaurant that only costs 14,85€ per person. The place was nice and cozy it was really homie type of Asian Restaurant.\nThe service was great and the Service crews were friendly.\nThe food tasted good and authentic Chinese food but I can taste some of msg but it’s okay.\n\nFood variants from vegetables, sushi, soup, chicken, duck, pork, beef and seafoods.\nI will definitely go back to this place.",
+        "time": 1703195804,
+        "translated": false
+      },
+      {
+        "author_name": "Joshua Meeker",
+        "author_url": "https://www.google.com/maps/contrib/102162925905068165574/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXtwh60qzSWinXuCBdPXpw1mnj0RNc5Uwgk2V1GVoU1m0bchDF1=s128-c0x00000000-cc-rp-mo-ba2",
+        "rating": 5,
+        "relative_time_description": "11 months ago",
+        "text": "All you can eat with good food. What more could you ask for :)\n\nGood staff",
+        "time": 1724063287,
+        "translated": false
+      },
+      {
+        "author_name": "Qide Ye",
+        "author_url": "https://www.google.com/maps/contrib/113048525721477968353/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIfYPfAL8uyilUN0Epq8WDNm-iSlVe1knsI6CdshMUA-i7lhA=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 years ago",
+        "text": "Awesome place to spend some quality time with your family. Excellent variety and quality of Chinese food. Absolut lovely owner and definitely worthy to come back.",
+        "time": 1640533212,
+        "translated": false
+      },
+      {
+        "author_name": "André M.",
+        "author_url": "https://www.google.com/maps/contrib/110993194650414232632/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWedems7amSoEVpxO4Y1uCabPthbqdCofIEKyhjo0syQPA6Dwy5=s128-c0x00000000-cc-rp-mo-ba5",
+        "rating": 3,
+        "relative_time_description": "5 years ago",
+        "text": "actually a nice place. nothing special. the food from buffet was nice. enough varieties. taste was good, and most of it was also hot enough. i guess we're coming back.",
+        "time": 1578395260,
+        "translated": false
+      },
+      {
+        "author_name": "另美美",
+        "author_url": "https://www.google.com/maps/contrib/105972564455454279644/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLnLFykchRZcZGx8ckJqpIONL08HCV-kzwwmkcRNNombZQ2Zw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "I found the experience delightful the food eas traditional the servers were very nice the atmosphere was so calm.",
+        "time": 1696370827,
+        "translated": false
+      }
+    ],
+    "user_ratings_total": 900
+  },
+  "status": "OK"
+}
