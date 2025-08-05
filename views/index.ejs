@@ -229,7 +229,7 @@
                     <% 
                         // Filter reviews: rating between 3 and 5, and sort by date descending
                         const filteredReviews = reviews
-                            .filter(review => review.rating >= 3 && review.rating <= 5)
+                            .filter(review => review.rating === 5)
                             .sort((a, b) => b.time - a.time);
 
                         // Get current year
