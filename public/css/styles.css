@@ -416,7 +416,7 @@ li.active>a {
 }
 
 #google-reviews {
-  background-image: url("../images/background-wood-gold-webp.webp");  display: flex;
+  background-image: url("../images/background-wood-webp.webp");
   flex-wrap: wrap;
   margin: 2.5em 0;
   border: solid 3px white;
@@ -731,4 +731,34 @@ color: black;
   color: white;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+}
+
+/* Gäste: reviews tiles styled like the dark brown cards (gold headers, white text) */
+
+.google-total-reviews,
+#google-reviews {
+  background-color: #321A1B;
+  background-image: url("../images/background-wood-dark-brown-webp.webp");
+  border: solid 3px #EAC294;
+  box-shadow: 5px 5px 15px 5px #221214;
+}
+
+.google-total-reviews .font-black {
+  color: #EAC294;
+}
+
+.google-total-reviews .font-grey {
+  color: white;
+}
+
+.review-author {
+  color: #EAC294;
+}
+
+.review-date {
+  color: white;
+}
+
+.review-text {
+  color: white;
 }
