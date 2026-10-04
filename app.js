@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const https = require("https");
 var favicon = require('serve-favicon')
 var path = require('path')
 
@@ -19,38 +18,34 @@ app.set('view engine', 'ejs');
 /* Footer Year */
 
 const thisYear = new Date().getFullYear();
-
-
-/* Google Total Reviews Widget */
-
-
-const url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJr99LYO8gvUcRrfxkVQhwB7c&fields=name,rating,user_ratings_total&key=" + process.env.GOOGLEAPIKEY;
+const testimonials = [
+    {
+        author: "Joshua M.",
+        date: "19. August 2024",
+        text: "All you can eat with good food. What more could you ask for :) Good staff"
+    },
+    {
+        author: "Lab B.",
+        date: "21. Dezember 2023",
+        text: "I found this good buffet Restaurant that only costs 14,85€ per person. The place was nice and cozy it was really homie type of Asian Restaurant. The service was great and the Service crews were friendly. The food tasted good and authentic Chinese food but I can taste some of msg but it’s okay. Food variants from vegetables, sushi, soup, chicken, duck, pork, beef and seafoods. I will definitely go back to this place."
+    },
+    {
+        author: "另美美",
+        date: "3. Oktober 2023",
+        text: "I found the experience delightful the food eas traditional the servers were very nice the atmosphere was so calm."
+    },
+    {
+        author: "Qide Y.",
+        date: "26. Dezember 2021",
+        text: "Awesome place to spend some quality time with your family. Excellent variety and quality of Chinese food. Absolut lovely owner and definitely worthy to come back."
+    }
+];
 
 app.get("/", function (req, res) {
-    
-    https.get(url, function (response) {
-        response.on("data", function (data) {
-            
-            const totalReviewData = JSON.parse(data);
-            
-            const name = totalReviewData.result.name;
-            const rating = totalReviewData.result.rating;
-            const userRatingsTotal = totalReviewData.result.user_ratings_total;
-            
-            res.render('index', {
-                
-                rating: rating,
-                userRatingsTotal: userRatingsTotal,
-                googleApiKey: process.env.GOOGLEAPIKEY,
-                
-                year: thisYear
-                
-            })
-
-        });
-
-    })
-    
+    res.render('index', {
+        testimonials: testimonials,
+        year: thisYear
+    });
 })
 
 app.get("/speisekarte", function (req, res) {
@@ -83,4 +78,3 @@ app.get("/datenschutz", function (req, res) {
 app.listen(process.env.PORT || 3000, function () {
     console.log("Server is running on port 3000.");
 })
-
