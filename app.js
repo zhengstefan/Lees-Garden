@@ -20,24 +20,29 @@ app.set('view engine', 'ejs');
 const thisYear = new Date().getFullYear();
 const testimonials = [
     {
-        author: "Joshua M.",
-        date: "19. August 2024",
-        text: "All you can eat with good food. What more could you ask for :) Good staff"
+        author: "Ewald",
+        date: "2. März 2026",
+        text: "Ist ein sehr schönes Restaurant. Schönes Ambiente."
     },
     {
-        author: "Lab B.",
-        date: "21. Dezember 2023",
-        text: "I found this good buffet Restaurant that only costs 14,85€ per person. The place was nice and cozy it was really homie type of Asian Restaurant. The service was great and the Service crews were friendly. The food tasted good and authentic Chinese food but I can taste some of msg but it’s okay. Food variants from vegetables, sushi, soup, chicken, duck, pork, beef and seafoods. I will definitely go back to this place."
+        author: "David",
+        date: "2. März 2026",
+        text: "Preis-Leistung absolut gut. Das Abendbuffet kostete im Dezember 2025 16,80 €."
     },
     {
-        author: "另美美",
-        date: "3. Oktober 2023",
-        text: "I found the experience delightful the food eas traditional the servers were very nice the atmosphere was so calm."
+        author: "Hummel",
+        date: "2. März 2026",
+        text: "Wir haben dort Buffet gegessen und waren sehr zufrieden. Es wurde schnell nachgelegt, die Behälter waren nicht zu groß, so dass alles immer frisch war. Sehr gutes Preis-Leistungs-Verhältnis."
     },
     {
-        author: "Qide Y.",
-        date: "26. Dezember 2021",
-        text: "Awesome place to spend some quality time with your family. Excellent variety and quality of Chinese food. Absolut lovely owner and definitely worthy to come back."
+        author: "Martin",
+        date: "2. März 2026",
+        text: "Abwechslungsreich und lecker! Das Buffet ist wirklich empfehlenswert."
+    },
+    {
+        author: "Im",
+        date: "2. März 2026",
+        text: "Wir besuchen das Restaurant als Familie sehr oft, mindestens einmal im Monat. Es ist wirklich wunderschön und das Essen ist toll. Unser Favorit ist das All-you-can-eat-Buffet, aber auch die anderen Gerichte aus der Speisekarte sind fantastisch."
     }
 ];
 
