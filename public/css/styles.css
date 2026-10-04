@@ -416,8 +416,7 @@ li.active>a {
 }
 
 #google-reviews {
-  background-color: white;
-  display: flex;
+  background-image: url("../images/background-wood-gold-webp.webp");  display: flex;
   flex-wrap: wrap;
   margin: 2.5em 0;
   border: solid 3px white;
