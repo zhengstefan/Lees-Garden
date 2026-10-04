@@ -200,17 +200,11 @@
       <div class="col-lg-4 image-container text-center"><a
           href="https://www.google.de/search?source=hp&ei=9RnfX5foMof4U5LwsMAJ&q=lees+garden+b%C3%BCdingen&oq=lees+garden+b%C3%BCdingen&gs_lcp=CgZwc3ktYWIQAzIICAAQxwEQrwEyAggAMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMggIABAWEAoQHlC7BFi7BGC2B2gAcAB4AIABdYgBdZIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjXtv2OoNztAhUH_BQKHRI4DJgQ4dUDCAk&uact=5#lrd=0x47bd20ef604bdfaf:0xb70770085564fcad,1,,,"
           target="_blank">
-          <img class="img-google-reviews" src="images/google-reviews.jpg" alt=""></a>
+          <img class="img-google-reviews" src="images/google-reviews.jpg" alt="Google-Rezensionen ansehen"></a>
       </div>
       <div class="col-lg-8">
         <h5 class="font-black avg-stars-total-data">China Restaurant Lee's Garden</h5>
-        <p class="font-grey font-thin avg-stars-total-data"><span>
-            <%= rating %>
-          </span><span class="padding-l-10px image-container-2"><img class="avg-stars-total"
-              src="images/avg-stars-total.png"></span><span>
-            <%= userRatingsTotal %>
-              Google-Rezensionen
-          </span></p>
+        <p class="font-grey font-thin avg-stars-total-data">Das sagen unsere Gäste.</p>
         <button class="btn btn-primary btn-review text-center">
           <a href="https://www.google.de/search?source=hp&ei=9RnfX5foMof4U5LwsMAJ&q=lees+garden+b%C3%BCdingen&oq=lees+garden+b%C3%BCdingen&gs_lcp=CgZwc3ktYWIQAzIICAAQxwEQrwEyAggAMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMggIABAWEAoQHlC7BFi7BGC2B2gAcAB4AIABdYgBdZIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjXtv2OoNztAhUH_BQKHRI4DJgQ4dUDCAk&uact=5#lrd=0x47bd20ef604bdfaf:0xb70770085564fcad,1,,,"
             target="_blank"><span><i class="fas fa-search"></i></span>
@@ -223,22 +217,18 @@
         </button>
       </div>
     </div>
-    
-    <div id="google-reviews"></div>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCfEzQevmygZXBxfFx1gEmuHRnjd7_XLX4&signed_in=true&libraries=places&language=de"></script>
-    <script>
-      jQuery(document).ready(function ($) {
-        $("#google-reviews").googlePlaces({
-          placeId: 'ChIJr99LYO8gvUcRrfxkVQhwB7c' //Find placeID @: https://developers.google.com/places/place-id
-          , render: ['reviews']
-          , min_rating: 5
-          , max_rows: 4
-          , shorten_names: true
 
-        });
-      });
-    </script>
+    <div id="google-reviews">
+      <% testimonials.forEach(function (testimonial) { %>
+          <article class="review-item">
+            <div class="review-meta">
+              <span class="review-author"><%= testimonial.author %></span>
+              <span class="review-date"><%= testimonial.date %></span>
+            </div>
+            <p class="review-text"><%= testimonial.text %></p>
+          </article>
+      <% }); %>
+    </div>
     
   </section>
 
