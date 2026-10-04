@@ -429,7 +429,7 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 .review-item {
   margin: 0;
   padding: 1.5em;
-  flex: 1 1 20%;
+  min-width: 0;
 }
 
 @media ( max-width:1200px) {
@@ -740,6 +740,10 @@ color: black;
   background-image: url("../images/background-wood-dark-brown-webp.webp");
   border: solid 3px #EAC294;
   box-shadow: 5px 5px 15px 5px #221214;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin: 2.5em 0;
 }
 
 .review-author {
